@@ -257,6 +257,7 @@ print "[+]Author:- Rakesh Mane[+]"
 print "[+]Contact:-rakeshmane12345@gmail.com[+]\n"
 print "#####################################"
 if 1:
+    i=1
     print "Injection point should be in this format:-<input type=text value=$> \nWhere $ represents injected string"
     print "Enter Injection Point:- "
     point=raw_input()
@@ -264,8 +265,14 @@ if 1:
     tag=tagprocess(point)
     attribute=attributeprocess(point)
     print "Total Number Of Blocked Keywords:- "
-    n=int(input())
+    while i==1:
+	    try:
+		n=int(input())
+		i=0
+	    except:
+		print "Enter a number!!"
     for i in range(0,n):
+	print 'Enter Keyword '+str(i+1)+':-'
         keywords.append(raw_input())
     print "______________________________________"
     stage2(point)
@@ -276,6 +283,7 @@ if 1:
     print "Tag:- "+tag
     print "Attribute:- "+attribute
     print "Payload:- "+payload
-    print "#####################################\n"
+    print "#####################################"
+
     
     
